@@ -22,7 +22,7 @@ public class slot : MonoBehaviour
     {
         if (catching == "" && other.GetComponent<Lock>() != null && !other.GetComponent<Lock>().isCatched)
         {
-            Debug.Log("catched by " + this.name);
+            //Debug.Log("catched by " + this.name);
             other.GetComponent<Lock>().isCatched = true;
             catching = other.name;
             this.GetComponent<MeshRenderer>().enabled = false;
