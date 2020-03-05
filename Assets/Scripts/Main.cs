@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-    public float amount_of_work = 3.0f;
+    public float amount_of_work;
     public float budget = 1100;
     public float power = 1000;
     public float final_score;
     public float final_power;
     public float effective_quality;
+    public string total_cost;
+    public string total_time;
     bool scored = false;
     List<float> budget_scores = new List<float>();
     List<float> throughput_scores = new List<float>();
@@ -24,6 +26,7 @@ public class Main : MonoBehaviour
     void Start()
     {
         this.possible_comb();
+        GameObject.Find("Text").GetComponent<UnityEngine.UI.Text>().text = "hahaha";
     }
 
     // Update is called once per frame
@@ -68,11 +71,15 @@ public class Main : MonoBehaviour
             float raw_scaled_score = (this.scale(this.budget_scores, budget_score, 100, this.budget_scores.ToArray().Length) +
                                  this.scale(this.throughput_scores, 1 / (machine1_score[1] + machine2_score[1] + machine3_score[1]), 100, this.throughput_scores.ToArray().Length) +
                                  this.scale(this.efficiency_scores, machine1_score[3] * machine2_score[3] * machine3_score[3], 100, this.efficiency_scores.ToArray().Length)) / 3.0f;
+
             final_score = this.scale(this.scores, raw_scaled_score, 100, this.scores.ToArray().Length);
             final_power = scale(this.total_power, raw_power, 100, this.total_power.ToArray().Length);
+            total_cost = (machine1_score[2] + machine2_score[2] + machine3_score[2]).ToString();
+            total_time = (this.amount_of_work / machine1_score[3] + this.amount_of_work / machine2_score[3] + this.amount_of_work / machine3_score[3]).ToString() + " seconds";
+
             print("Average effective quality: " + effective_quality);
-            print("total cost: " + (machine1_score[2] + machine2_score[2] + machine3_score[2]).ToString());
-            print("time taken: " + (this.amount_of_work / machine1_score[3] + this.amount_of_work / machine2_score[3] + this.amount_of_work / machine3_score[3]).ToString() + " seconds");
+            print("total cost: " + total_cost);
+            print("time taken: " + total_time);
             print("raw_power: " + raw_power.ToString() + ", raw_score: " + raw_scaled_score.ToString());
             print("scaled_power: " + final_power.ToString() + ", scaled_score: " + final_score.ToString());
             scored = true;
