@@ -6,6 +6,9 @@ public class M : MonoBehaviour
 {
     public int State; //1: preparing, 2: working1, 3: working2, 4: working3, 5:done, 6:fail
     private float start = 0;
+    private AudioSource printer;
+    private AudioSource cnc;
+    private AudioSource robot;
     Main main;
     Vector3 M2_POS;
     
@@ -29,10 +32,24 @@ public class M : MonoBehaviour
             GameObject.Find("Text").GetComponent<UnityEngine.UI.Text>().enabled = false;
             GameObject.Find("light1").GetComponent<Light>().intensity = 1.0f;
             GameObject.Find("light2").GetComponent<Light>().intensity = 1.0f;
+            GameObject.Find("light3").GetComponent<Light>().intensity = 0.0f;
 
             foreach (GameObject animated in GameObject.FindGameObjectsWithTag("animated"))
             {
                 animated.GetComponent<Animator>().enabled = false;
+            }
+
+            if (printer && printer.isPlaying)
+            {
+                printer.Stop();
+            }
+            if (cnc && cnc.isPlaying)
+            {
+                cnc.Stop();
+            }
+            if (robot && robot.isPlaying)
+            {
+                robot.Stop();
             }
         }
         else if(State == 1)
@@ -50,6 +67,13 @@ public class M : MonoBehaviour
                 this.transform.position = this.transform.position + dist;
                 M2_POS += dist;
                 start = Time.time;
+                // play sound
+                GameObject machine = GameObject.Find(machine_name);
+                printer = machine.GetComponent<AudioSource>();
+                if (!printer.isPlaying)
+                {
+                    printer.Play();
+                }
             }
         }
         if (State == 1)
@@ -77,6 +101,17 @@ public class M : MonoBehaviour
                 this.transform.position = this.transform.position + dist;
                 M2_POS += dist;
                 start = Time.time;
+
+                if (printer.isPlaying)
+                {
+                    printer.Stop();
+                }
+                GameObject machine = GameObject.Find(machine_name);
+                cnc = machine.GetComponent<AudioSource>();
+                if (!cnc.isPlaying)
+                {
+                    cnc.Play();
+                }
             }
         }else if(State == 3)
         {
@@ -104,6 +139,17 @@ public class M : MonoBehaviour
                 this.transform.position = this.transform.position + dist;
                 M2_POS += dist;
                 start = Time.time;
+
+                if (cnc.isPlaying)
+                {
+                    cnc.Stop();
+                }
+                GameObject machine = GameObject.Find(machine_name);
+                robot = machine.GetComponent<AudioSource>();
+                if (!robot.isPlaying)
+                {
+                    robot.Play();
+                }
             }
         }else if(State == 4)
         {
@@ -148,6 +194,11 @@ public class M : MonoBehaviour
                     }
                 }
                 start = Time.time;
+
+                if (robot.isPlaying)
+                {
+                    robot.Stop();
+                }
             }
         }else if (State == 5)
         {
@@ -167,18 +218,22 @@ public class M : MonoBehaviour
                 //print("raw_power: " + raw_power.ToString() + ", raw_score: " + raw_scaled_score.ToString());
                 //print("scaled_power: " + final_power.ToString() + ", scaled_score: " + final_score.ToString());
                 GameObject.Find("Text").GetComponent<UnityEngine.UI.Text>().text = "Manufacturing completed!\n " +
-                                                                                   "Final Score: " + main.effective_quality.ToString() + "\n " +
+                                                                                   "Effective Quality: " + main.effective_quality.ToString() + "\n " +
                                                                                    "Total Cost: " + main.total_cost + "\n " + 
                                                                                    "Total Time: " + main.total_time + "\n " + 
                                                                                    "Power consumed: " + main.final_power + "%\n\n" + 
                                                                                    "FINAL SCORE: " + main.final_score + "/100.0000";
-                if (GameObject.Find("light1").GetComponent<Light>().intensity >= 0)
+                if (GameObject.Find("light1").GetComponent<Light>().intensity > 0)
                 {
                     GameObject.Find("light1").GetComponent<Light>().intensity -= 0.05f;
                 }
-                if (GameObject.Find("light2").GetComponent<Light>().intensity >= 0)
+                if (GameObject.Find("light2").GetComponent<Light>().intensity > 0)
                 {
                     GameObject.Find("light2").GetComponent<Light>().intensity -= 0.05f;
+                }
+                else
+                {
+                    GameObject.Find("light3").GetComponent<Light>().intensity = 10.0f;
                 }
             }
         }
