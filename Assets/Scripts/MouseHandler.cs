@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MouseHandler : MonoBehaviour
 {
-    public float horizontalSpeed = 3f;
-    public float verticalSpeed = 3f;
+    public float horizontalSpeed = 1f;
+    public float verticalSpeed = 1f;
     private float xRotation = 0.0f;
     private float yRotation = 0.0f;
     private Camera cam;

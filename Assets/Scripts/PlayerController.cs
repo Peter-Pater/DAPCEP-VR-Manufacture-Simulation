@@ -8,11 +8,15 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed = 2f;
     public float Gravity = 9.8f;
     private float velocity = 0;
+    private Camera cam;
+    //private GameObject playerObject;
 
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        cam = Camera.main;
+        //playerObject = GameObject.Find("PlayerObject");
     }
 
     // Update is called once per frame
@@ -20,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal") * this.MovementSpeed;
         float vertical = Input.GetAxis("Vertical") * this.MovementSpeed;
-        characterController.Move((Vector3.right * horizontal + Vector3.forward * vertical) * Time.deltaTime);
+        characterController.Move((cam.transform.right * horizontal + cam.transform.forward * vertical) * Time.deltaTime);
 
         if (characterController.isGrounded)
         {
