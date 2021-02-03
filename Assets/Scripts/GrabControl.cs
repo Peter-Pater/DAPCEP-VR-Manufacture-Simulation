@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GrabControl : MonoBehaviour
 {
-    private bool handDetected;
     private Quaternion inHandRotation;
     private GameObject grabPoint;
     // Start is called before the first frame update
@@ -17,26 +16,34 @@ public class GrabControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (handDetected && Input.GetMouseButton(0))
-        {
-            this.gameObject.transform.position = grabPoint.transform.position;
-            this.gameObject.transform.rotation = this.inHandRotation;
-        }
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "Hand")
+        if (other.gameObject.name == "Hand" && Input.GetMouseButton(0) && (GameObject.Find("Hand").GetComponent<Hand>().inHandObject == null || GameObject.Find("Hand").GetComponent<Hand>().inHandObject == this.gameObject))
         {
-            handDetected = true;
+            if (this.gameObject.name == "SMALLBOT_A1P2_02" || this.gameObject.name == "SMALLBOT_A1P2_03")
+            {
+                this.gameObject.transform.position = grabPoint.transform.position - 0.8f * Vector3.down;
+            }
+            else
+            {
+                this.gameObject.transform.position = grabPoint.transform.position;
+            }
+            this.gameObject.transform.rotation = this.inHandRotation;
+            if (GameObject.Find("Hand").GetComponent<Hand>().inHandObject == null)
+            {
+                GameObject.Find("Hand").GetComponent<Hand>().inHandObject = this.gameObject;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "Hand")
+        if (other.gameObject.name == "Hand" && GameObject.Find("Hand").GetComponent<Hand>().inHandObject == this.gameObject)
         {
-            handDetected = false;
+            GameObject.Find("Hand").GetComponent<Hand>().inHandObject = null;
         }
     }
 }
