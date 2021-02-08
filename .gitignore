@@ -3,6 +3,7 @@ Info
 *.mp4
 DAPCEP App/
 
+*build*
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
