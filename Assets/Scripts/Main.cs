@@ -32,6 +32,10 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (GameObject.Find("M_2").GetComponent<M>().State == 1) {
             scored = false;
         }
