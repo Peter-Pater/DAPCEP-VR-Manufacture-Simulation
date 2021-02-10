@@ -5,6 +5,7 @@ using UnityEngine;
 public class slot : MonoBehaviour
 {
     public string catching = "";
+    public string type;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class slot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (catching == "" && other.GetComponent<Lock>() != null && !other.GetComponent<Lock>().isCatched)
+        if (catching == "" && other.GetComponent<Lock>() != null && !other.GetComponent<Lock>().isCatched && other.name.Contains(this.type))
         {
             //Debug.Log("catched by " + this.name);
             other.GetComponent<Lock>().isCatched = true;

@@ -107,32 +107,35 @@ public class Main : MonoBehaviour
     void possible_comb()
     {
         float power = 0;
-        GameObject[] machines = GameObject.FindGameObjectsWithTag("machines");
+        //GameObject[] machines = GameObject.FindGameObjectsWithTag("machines");
+        GameObject[] smallPrinters = GameObject.FindGameObjectsWithTag("smallPrinter");
+        GameObject[] largePrinters = GameObject.FindGameObjectsWithTag("largePrinter");
+        GameObject[] smallbots = GameObject.FindGameObjectsWithTag("smallBot");
 
-        for (int i = 0; i < machines.Length - 2; i++)
+        for (int i = 0; i < smallPrinters.Length; i++)
         {
             power = 0;
             float[] system_costs = new float[3];
             float[] system_throughputs = new float[3];
             float[] system_efficiencies = new float[3];
-            system_costs[0] = machines[i].GetComponent<Attributes>().Calculate_score()[2];
-            system_throughputs[0] = machines[i].GetComponent<Attributes>().Calculate_score()[1];
-            system_efficiencies[0] = machines[i].GetComponent<Attributes>().Calculate_score()[3];
+            system_costs[0] = smallPrinters[i].GetComponent<Attributes>().Calculate_score()[2];
+            system_throughputs[0] = smallPrinters[i].GetComponent<Attributes>().Calculate_score()[1];
+            system_efficiencies[0] = smallPrinters[i].GetComponent<Attributes>().Calculate_score()[3];
 
-            for (int j = i + 1; j < machines.Length - 1; j++)
+            for (int j = 0; j < largePrinters.Length; j++)
             {
-                system_costs[1] = machines[j].GetComponent<Attributes>().Calculate_score()[2];
-                system_throughputs[1] = machines[j].GetComponent<Attributes>().Calculate_score()[1];
-                system_efficiencies[1] = machines[j].GetComponent<Attributes>().Calculate_score()[3];
+                system_costs[1] = largePrinters[j].GetComponent<Attributes>().Calculate_score()[2];
+                system_throughputs[1] = largePrinters[j].GetComponent<Attributes>().Calculate_score()[1];
+                system_efficiencies[1] = largePrinters[j].GetComponent<Attributes>().Calculate_score()[3];
 
-                for (int k = j + 1; k < machines.Length; k++)
+                for (int k = 0; k < smallbots.Length; k++)
                 {
-                    system_costs[2] = machines[k].GetComponent<Attributes>().Calculate_score()[2];
-                    system_throughputs[2] = machines[k].GetComponent<Attributes>().Calculate_score()[1];
-                    system_efficiencies[2] = machines[k].GetComponent<Attributes>().Calculate_score()[3];
-                    power = (this.amount_of_work / system_efficiencies[0]) * machines[i].GetComponent<Attributes>().power_rating +
-                            (this.amount_of_work / system_efficiencies[1]) * machines[j].GetComponent<Attributes>().power_rating +
-                            (this.amount_of_work / system_efficiencies[2]) * machines[k].GetComponent<Attributes>().power_rating;
+                    system_costs[2] = smallbots[k].GetComponent<Attributes>().Calculate_score()[2];
+                    system_throughputs[2] = smallbots[k].GetComponent<Attributes>().Calculate_score()[1];
+                    system_efficiencies[2] = smallbots[k].GetComponent<Attributes>().Calculate_score()[3];
+                    power = (this.amount_of_work / system_efficiencies[0]) * smallPrinters[i].GetComponent<Attributes>().power_rating +
+                            (this.amount_of_work / system_efficiencies[1]) * largePrinters[j].GetComponent<Attributes>().power_rating +
+                            (this.amount_of_work / system_efficiencies[2]) * smallbots[k].GetComponent<Attributes>().power_rating;
                     float budget_score;
                     if ((system_costs[0] + system_costs[1] + system_costs[2]) > this.budget)
                     {
@@ -163,20 +166,20 @@ public class Main : MonoBehaviour
                             this.scale(this.efficiency_scores, this.efficiency_scores[i], 100, this.efficiency_scores.ToArray().Length)) / 3.0f);
         }
 
-        //this.scores.Sort();
-        //this.budget_scores.Sort();
-        //this.throughput_scores.Sort();
-        //this.efficiency_scores.Sort();
-        //this.total_power.Sort();
+        this.scores.Sort();
+        this.budget_scores.Sort();
+        this.throughput_scores.Sort();
+        this.efficiency_scores.Sort();
+        this.total_power.Sort();
 
-        //foreach (float e in this.budget_scores)
-        //{
-        //    print(e);
-        //}
-        //print("raw budget_scores from " + this.budget_scores[0].ToString() + " to " + this.budget_scores[this.budget_scores.ToArray().Length - 1].ToString());
-        //print("raw throughput_scores from " + this.throughput_scores[0].ToString() + " to " + this.throughput_scores[this.throughput_scores.ToArray().Length - 1].ToString());
-        //print("raw efficiency_scores from " + this.efficiency_scores[0].ToString() + " to " + this.efficiency_scores[this.efficiency_scores.ToArray().Length - 1].ToString());
-        //print("raw scores from " + this.scores[0].ToString() + " to " + this.scores[this.scores.ToArray().Length - 1].ToString());
-        //print("raw power from " + this.total_power[0].ToString() + " to " + this.total_power[this.total_power.ToArray().Length - 1].ToString());
+        foreach (float e in this.budget_scores)
+        {
+            print(e);
+        }
+        print("raw budget_scores from " + this.budget_scores[0].ToString() + " to " + this.budget_scores[this.budget_scores.ToArray().Length - 1].ToString());
+        print("raw throughput_scores from " + this.throughput_scores[0].ToString() + " to " + this.throughput_scores[this.throughput_scores.ToArray().Length - 1].ToString());
+        print("raw efficiency_scores from " + this.efficiency_scores[0].ToString() + " to " + this.efficiency_scores[this.efficiency_scores.ToArray().Length - 1].ToString());
+        print("raw scores from " + this.scores[0].ToString() + " to " + this.scores[this.scores.ToArray().Length - 1].ToString());
+        print("raw power from " + this.total_power[0].ToString() + " to " + this.total_power[this.total_power.ToArray().Length - 1].ToString());
     }
 }

@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 2319438}
   m_Layer: 0
   m_Name: 3DPRINTER_LG1_blue
-  m_TagString: machines
+  m_TagString: largePrinter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,6 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!54 &2319439
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7321,7 +7323,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1685634635032586, guid: c4e4a52c770997f45ad03bf35b96d0e1, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: smallBot
       objectReference: {fileID: 0}
     - target: {fileID: 4662015222503102, guid: c4e4a52c770997f45ad03bf35b96d0e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13183,6 +13185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!114 &291734428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17961,6 +17965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!114 &429895854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20710,6 +20716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catching: 
+  type: 3DPRINTER_UNIT1
 --- !u!1 &504501977
 GameObject:
   m_ObjectHideFlags: 0
@@ -22268,7 +22275,7 @@ GameObject:
   - component: {fileID: 561405166}
   m_Layer: 0
   m_Name: 3DPRINTER_UNIT1_red
-  m_TagString: machines
+  m_TagString: smallPrinter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22285,6 +22292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!54 &561405167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27891,7 +27900,7 @@ GameObject:
   - component: {fileID: 734789751}
   m_Layer: 0
   m_Name: 3DPRINTER_UNIT1_blue
-  m_TagString: machines
+  m_TagString: smallPrinter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27955,6 +27964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!54 &734789752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43516,7 +43527,7 @@ GameObject:
   - component: {fileID: 1166915682}
   m_Layer: 0
   m_Name: 3DPRINTER_LG1_yellow
-  m_TagString: machines
+  m_TagString: largePrinter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43724,6 +43735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!1 &1170755217
 GameObject:
   m_ObjectHideFlags: 0
@@ -46953,6 +46966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catching: 
+  type: 3DPRINTER_LG1
 --- !u!1 &1243461145
 GameObject:
   m_ObjectHideFlags: 0
@@ -52708,6 +52722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!65 &1373671333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53202,6 +53218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catching: 
+  type: SMALLBOT
 --- !u!1 &1387966041
 GameObject:
   m_ObjectHideFlags: 0
@@ -54440,7 +54457,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1157005597652280, guid: eaf7bd6cc6ae5b748be54e60665b9dbb, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: smallBot
       objectReference: {fileID: 0}
     - target: {fileID: 1091684431250156, guid: eaf7bd6cc6ae5b748be54e60665b9dbb, type: 3}
       propertyPath: m_TagString
@@ -60181,7 +60198,7 @@ GameObject:
   - component: {fileID: 1576090372}
   m_Layer: 0
   m_Name: 3DPRINTER_LG1_red
-  m_TagString: machines
+  m_TagString: largePrinter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60198,6 +60215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!54 &1576090373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70018,7 +70037,7 @@ GameObject:
   - component: {fileID: 1881235330}
   m_Layer: 0
   m_Name: 3DPRINTER_UNIT1_yellow
-  m_TagString: machines
+  m_TagString: smallPrinter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70035,6 +70054,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c809ecec234494b6ab437534a277f22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDetected: 0
+  grabState: 0
 --- !u!54 &1881235331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74170,7 +74191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1163226169839436, guid: 0aca63d9a3a77cd4fa7283f37bf33a0c, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: smallBot
       objectReference: {fileID: 0}
     - target: {fileID: 1395802185220064, guid: 0aca63d9a3a77cd4fa7283f37bf33a0c, type: 3}
       propertyPath: m_TagString
