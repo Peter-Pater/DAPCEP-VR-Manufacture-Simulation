@@ -14,6 +14,8 @@ public class MouseHandler : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

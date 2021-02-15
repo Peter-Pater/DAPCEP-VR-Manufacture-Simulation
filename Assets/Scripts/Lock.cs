@@ -20,7 +20,16 @@ public class Lock : MonoBehaviour
     void Update()
     {
         // prevent getting out of the world
-        if (this.gameObject.transform.position.y < (floor.transform.position - Vector3.down).y)
+        if (this.gameObject.transform.position.y < floor.transform.position.y - 100)
+        {
+            this.gameObject.transform.position = this.myPosition;
+            this.gameObject.transform.rotation = this.myRotation;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject == this.floor)
         {
             this.gameObject.transform.position = this.myPosition;
             this.gameObject.transform.rotation = this.myRotation;

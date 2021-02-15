@@ -25,12 +25,12 @@ public class GrabControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((this.grabState == 0) && this.handDetected && Input.GetMouseButtonDown(0))
+        if ((this.grabState == 0) && this.handDetected && Input.GetMouseButtonDown(0) && this.hand.GetComponent<Hand>().inHandObject == null)
         {
             this.grabState = 1;
             this.hand.GetComponent<Hand>().inHandObject = this.gameObject;
         }
-        else if (this.grabState == 1)
+        else if (this.grabState == 1 && this.hand.GetComponent<Hand>().inHandObject == this.gameObject)
         {
             if (this.gameObject.name == "SMALLBOT_A1P2_02" || this.gameObject.name == "SMALLBOT_A1P2_03")
             {

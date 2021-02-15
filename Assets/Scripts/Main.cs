@@ -32,10 +32,11 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        // not for webgl
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Application.Quit();
+        //}
         if (GameObject.Find("M_2").GetComponent<M>().State == 1) {
             scored = false;
         }
@@ -113,8 +114,8 @@ public class Main : MonoBehaviour
         float power = 0;
         //GameObject[] machines = GameObject.FindGameObjectsWithTag("machines");
         GameObject[] smallPrinters = GameObject.FindGameObjectsWithTag("smallPrinter");
-        GameObject[] largePrinters = GameObject.FindGameObjectsWithTag("largePrinter");
         GameObject[] smallbots = GameObject.FindGameObjectsWithTag("smallBot");
+        GameObject[] largePrinters = GameObject.FindGameObjectsWithTag("largePrinter");
 
         for (int i = 0; i < smallPrinters.Length; i++)
         {
@@ -126,20 +127,20 @@ public class Main : MonoBehaviour
             system_throughputs[0] = smallPrinters[i].GetComponent<Attributes>().Calculate_score()[1];
             system_efficiencies[0] = smallPrinters[i].GetComponent<Attributes>().Calculate_score()[3];
 
-            for (int j = 0; j < largePrinters.Length; j++)
+            for (int j = 0; j < smallbots.Length; j++)
             {
-                system_costs[1] = largePrinters[j].GetComponent<Attributes>().Calculate_score()[2];
-                system_throughputs[1] = largePrinters[j].GetComponent<Attributes>().Calculate_score()[1];
-                system_efficiencies[1] = largePrinters[j].GetComponent<Attributes>().Calculate_score()[3];
+                system_costs[1] = smallbots[j].GetComponent<Attributes>().Calculate_score()[2];
+                system_throughputs[1] = smallbots[j].GetComponent<Attributes>().Calculate_score()[1];
+                system_efficiencies[1] = smallbots[j].GetComponent<Attributes>().Calculate_score()[3];
 
-                for (int k = 0; k < smallbots.Length; k++)
+                for (int k = 0; k < largePrinters.Length; k++)
                 {
-                    system_costs[2] = smallbots[k].GetComponent<Attributes>().Calculate_score()[2];
-                    system_throughputs[2] = smallbots[k].GetComponent<Attributes>().Calculate_score()[1];
-                    system_efficiencies[2] = smallbots[k].GetComponent<Attributes>().Calculate_score()[3];
+                    system_costs[2] = largePrinters[k].GetComponent<Attributes>().Calculate_score()[2];
+                    system_throughputs[2] = largePrinters[k].GetComponent<Attributes>().Calculate_score()[1];
+                    system_efficiencies[2] = largePrinters[k].GetComponent<Attributes>().Calculate_score()[3];
                     power = (this.amount_of_work / system_efficiencies[0]) * smallPrinters[i].GetComponent<Attributes>().power_rating +
-                            (this.amount_of_work / system_efficiencies[1]) * largePrinters[j].GetComponent<Attributes>().power_rating +
-                            (this.amount_of_work / system_efficiencies[2]) * smallbots[k].GetComponent<Attributes>().power_rating;
+                            (this.amount_of_work / system_efficiencies[1]) * smallbots[j].GetComponent<Attributes>().power_rating +
+                            (this.amount_of_work / system_efficiencies[2]) * largePrinters[k].GetComponent<Attributes>().power_rating;
                     float budget_score;
                     if ((system_costs[0] + system_costs[1] + system_costs[2]) > this.budget)
                     {
