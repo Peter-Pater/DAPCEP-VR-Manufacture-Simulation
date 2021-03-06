@@ -96,7 +96,7 @@ public class Main : MonoBehaviour
             effective_quality = (gaussian(machine1.nominal_quality, machine1.quality_std) +
                                 gaussian(machine2.nominal_quality, machine2.quality_std) +
                                 gaussian(machine3.nominal_quality, machine3.quality_std)) / 3.0f;
-            final_score = Mathf.Max(this.budget - total_cost_num, 0) / 200 + 8 / total_time_num + effective_quality;
+            final_score = Mathf.Max(this.budget - total_cost_num, 0) / 200 + 8.0f / total_time_num + effective_quality;
             scored = true;
         }
     }
