@@ -458,7 +458,7 @@ Transform:
   - {fileID: 1829488925}
   - {fileID: 184894243}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -90.00001, y: -90, z: 0}
 --- !u!114 &2319444
 MonoBehaviour:
@@ -7468,7 +7468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4662015222503102, guid: c4e4a52c770997f45ad03bf35b96d0e1, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4662015222503102, guid: c4e4a52c770997f45ad03bf35b96d0e1, type: 3}
       propertyPath: m_LocalScale.x
@@ -10708,17 +10708,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 100
+  m_text: 'Cost: 100
 
-    Setup cost: 50
+    Cycle Time: 10
 
-    Power Rating: 10
-
-    Nominal Cycle Time: 10
-
-    Nominal Quality: 0.7
-
-    Quality Std: 0.05'
+    Quality: 0.7'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -10787,12 +10781,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 234595995}
-    characterCount: 112
+    characterCount: 37
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -12946,7 +12940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount_of_work: 6
-  budget: 1100
+  budget: 750
   power: 1000
   final_score: 0
   final_power: 0
@@ -13357,11 +13351,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694a189191eb52247b2b58dbcabe9647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  purchase_cost: 300
+  purchase_cost: 350
   setup_cost: 100
   power_rating: 20
   nominal_cycle_time: 1
-  nominal_quality: 0.99
+  nominal_quality: 0.97
   quality_std: 0.01
   precision: 0
   debug: 0
@@ -18102,7 +18096,7 @@ MonoBehaviour:
   setup_cost: 100
   power_rating: 20
   nominal_cycle_time: 3
-  nominal_quality: 0.92
+  nominal_quality: 0.9
   quality_std: 0.05
   precision: 0
   debug: 0
@@ -24564,17 +24558,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 300
+  m_text: 'Cost: 350
 
-    Setup cost: 100
+    Cycle Time: 1
 
-    Power Rating: 20
-
-    Nominal Cycle Time: 1
-
-    Nominal Quality 0.99
-
-    Quality Std: 0.01'
+    Quality: 0.97'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -24643,12 +24631,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 631350630}
-    characterCount: 112
+    characterCount: 37
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -28045,7 +28033,7 @@ Transform:
   - {fileID: 1760016937}
   - {fileID: 1115011679}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!65 &734789750
 BoxCollider:
@@ -28119,7 +28107,7 @@ MonoBehaviour:
   setup_cost: 55
   power_rating: 10
   nominal_cycle_time: 7.5
-  nominal_quality: 0.8
+  nominal_quality: 0.85
   quality_std: 0.025
   precision: 0.8
   debug: 0
@@ -41614,17 +41602,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 250
+  m_text: 'Cost: 250
 
-    Setup cost: 100
+    Cycle Time: 3
 
-    Power Rating: 20
-
-    Nominal Cycle Time: 3
-
-    Nominal Quality: 0.92
-
-    Quality Std: 0.05'
+    Quality: 0.9'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -41693,12 +41675,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 1128134806}
-    characterCount: 113
+    characterCount: 36
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -44008,7 +43990,7 @@ Transform:
   - {fileID: 1405553245}
   - {fileID: 1178902504}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -90.00001, y: -90, z: 0}
 --- !u!114 &1166915680
 MonoBehaviour:
@@ -44893,17 +44875,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 300
+  m_text: 'Cost: 300
 
-    Setup cost: 75
+    Cycle Time: 2
 
-    Power Rating: 15
-
-    Nominal Cycle Time: 2
-
-    Nominal Quality 0.97
-
-    Quality Std: 0.01'
+    Quality: 0.97'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -44972,12 +44948,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 1185811123}
-    characterCount: 111
+    characterCount: 37
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -47443,7 +47419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your Budget: 1100'
+  m_text: 'Your Budget: 750'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -47512,7 +47488,7 @@ MonoBehaviour:
   m_margin: {x: -13.359044, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 1243461146}
-    characterCount: 17
+    characterCount: 16
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -53333,7 +53309,7 @@ MonoBehaviour:
   setup_cost: 100
   power_rating: 20
   nominal_cycle_time: 5
-  nominal_quality: 0.88
+  nominal_quality: 0.75
   quality_std: 0.025
   precision: 0
   debug: 0
@@ -55050,7 +55026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4739262024505616, guid: eaf7bd6cc6ae5b748be54e60665b9dbb, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4739262024505616, guid: eaf7bd6cc6ae5b748be54e60665b9dbb, type: 3}
       propertyPath: m_LocalScale.x
@@ -59998,17 +59974,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 200
+  m_text: 'Cost: 200
 
-    Setup cost: 100
+    Cycle Time: 5
 
-    Power Rating: 20
-
-    Nominal Cycle Time: 5
-
-    Nominal Quality: 0.75
-
-    Quality Std: 0.025'
+    Quality: 0.75'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -60077,12 +60047,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 1560245524}
-    characterCount: 114
+    characterCount: 37
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -60779,7 +60749,7 @@ MonoBehaviour:
   power_rating: 15
   nominal_cycle_time: 4
   nominal_quality: 0.8
-  quality_std: 0.025
+  quality_std: 0.05
   precision: 0
   debug: 0
 --- !u!82 &1576090379
@@ -61321,17 +61291,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 250
+  m_text: 'Cost: 250
 
-    Setup cost: 75
+    Cycle Time: 4
 
-    Power Rating: 15
-
-    Nominal Cycle Time: 4
-
-    Nominal Quality 0.8
-
-    Quality Std: 0.025'
+    Quality: 0.8'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -61400,12 +61364,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 1592941740}
-    characterCount: 111
+    characterCount: 36
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -67579,17 +67543,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 150
+  m_text: 'Cost: 150
 
-    Setup cost: 55
+    Cycle Time: 7.5
 
-    Power Rating: 10
-
-    Nominal Cycle Time: 7.5
-
-    Nominal Quality: 0.8
-
-    Quality Std: 0.01'
+    Quality: 0.85'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -67658,12 +67616,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 1779954098}
-    characterCount: 113
+    characterCount: 39
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 22
+    spaceCount: 6
+    wordCount: 9
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -68834,17 +68792,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 275
+  m_text: 'Cost: 275
 
-    Setup cost: 75
+    Cycle Time: 3
 
-    Power Rating: 15
-
-    Nominal Cycle Time: 3
-
-    Nominal Quality: 0.9
-
-    Quality Std: 0.025'
+    Quality: 0.9'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -68913,12 +68865,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 1820671349}
-    characterCount: 112
+    characterCount: 36
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -70922,7 +70874,7 @@ Transform:
   - {fileID: 293096508}
   - {fileID: 1861871871}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!114 &1881235336
 MonoBehaviour:
@@ -75030,7 +74982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4883232543935086, guid: 0aca63d9a3a77cd4fa7283f37bf33a0c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4883232543935086, guid: 0aca63d9a3a77cd4fa7283f37bf33a0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -81098,17 +81050,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Purchase cost: 200
+  m_text: 'Cost: 200
 
-    Setup cost: 45
+    Cycle Time: 5
 
-    Power Rating: 10
-
-    Nominal Cycle Time: 5
-
-    Nominal Quality: 0.95
-
-    Quality Std: 0.01'
+    Quality: 0.95'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -81177,12 +81123,12 @@ MonoBehaviour:
   m_margin: {x: -1.0125188, y: -4.028502, z: 9.694412, w: 0}
   m_textInfo:
     textComponent: {fileID: 2119152521}
-    characterCount: 112
+    characterCount: 37
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

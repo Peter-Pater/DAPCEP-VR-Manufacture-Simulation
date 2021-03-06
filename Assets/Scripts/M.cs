@@ -218,11 +218,10 @@ public class M : MonoBehaviour
                 //print("raw_power: " + raw_power.ToString() + ", raw_score: " + raw_scaled_score.ToString());
                 //print("scaled_power: " + final_power.ToString() + ", scaled_score: " + final_score.ToString());
                 GameObject.Find("Text").GetComponent<UnityEngine.UI.Text>().text = "Manufacturing completed!\n " +
-                                                                                   "Effective Quality: " + main.effective_quality.ToString() + "\n " +
+                                                                                   "Quality: " + main.effective_quality.ToString() + "\n " +
                                                                                    "Total Cost: " + main.total_cost + "\n " + 
                                                                                    "Total Time: " + main.total_time + "\n " + 
-                                                                                   "Power consumed: " + main.final_power + "%\n\n" + 
-                                                                                   "FINAL SCORE: " + main.final_score + "/100.0000";
+                                                                                   "FINAL SCORE: " + main.final_score + "/3.0";
                 if (GameObject.Find("light1").GetComponent<Light>().intensity > 0)
                 {
                     GameObject.Find("light1").GetComponent<Light>().intensity -= 0.05f;

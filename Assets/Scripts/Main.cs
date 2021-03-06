@@ -87,8 +87,26 @@ public class Main : MonoBehaviour
             print("time taken: " + total_time);
             print("raw_power: " + raw_power.ToString() + ", raw_score: " + raw_scaled_score.ToString());
             print("scaled_power: " + final_power.ToString() + ", scaled_score: " + final_score.ToString());
+
+            // simplified
+            float total_cost_num = machine1.purchase_cost + machine2.purchase_cost + machine3.purchase_cost;
+            float total_time_num = machine1.nominal_cycle_time + machine2.nominal_cycle_time + machine3.nominal_cycle_time;
+            this.total_cost = total_cost_num.ToString();
+            this.total_time = total_time_num.ToString();
+            effective_quality = (gaussian(machine1.nominal_quality, machine1.quality_std) +
+                                gaussian(machine2.nominal_quality, machine2.quality_std) +
+                                gaussian(machine3.nominal_quality, machine3.quality_std)) / 3.0f;
+            final_score = Mathf.Max(this.budget - total_cost_num, 0) / 200 + 8 / total_time_num + effective_quality;
             scored = true;
         }
+    }
+
+    float gaussian(float mean, float std)
+    {
+        float u1 = 1.0f - Random.Range(0.0f, 1.0f);
+        float u2 = 1.0f - Random.Range(0.0f, 1.0f);
+        float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(2.0f * Mathf.PI * u2);
+        return mean + std * randStdNormal;
     }
 
     float scale(List<float> range, float score, float highest, float size)
